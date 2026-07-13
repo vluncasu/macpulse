@@ -8,9 +8,17 @@ Developed by [TerabitLab](https://terabitlab.com/).
 
 Repository: `https://github.com/vluncasu/macpulse`
 
+<p align="center">
+  <a href="https://github.com/vluncasu/macpulse/releases/download/v2.1.2/MacPulse-2.1.2.dmg"><strong>Download MacPulse 2.1.2 for macOS (.dmg)</strong></a><br>
+  <sub>Universal application for Apple Silicon and Intel Macs · macOS 13 or newer</sub>
+</p>
+
 ## Download
 
 [Download MacPulse 2.1.2 for macOS (DMG)](https://github.com/vluncasu/macpulse/releases/download/v2.1.2/MacPulse-2.1.2.dmg) or open the [v2.1.2 release page](https://github.com/vluncasu/macpulse/releases/tag/v2.1.2) for checksums and release notes.
+
+> [!IMPORTANT]
+> Installable Mac binaries are published as **GitHub Release assets**, not under Packages. [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) provides registries for formats such as npm, Maven, NuGet, RubyGems, and containers; it is not a generic DMG download area. The verified MacPulse DMG is attached directly to the release above.
 
 This is the No-Team build: it is ad-hoc signed and is not Apple-notarized. macOS may therefore block its first launch. After dragging `MacPulse.app` to Applications, use Finder to Control-click the application, choose **Open**, and confirm only if the downloaded SHA-256 matches the checksum published with the release. Users who require a verified publisher identity should build from source or use a future Developer ID signed and notarized release.
 
@@ -70,6 +78,49 @@ The interface is shown in its normal usage order: first the live menu-bar dashbo
   </tr>
 </table>
 </details>
+
+### Settings
+
+Every settings surface is included below. The captures are cropped to the application window and exclude unrelated desktop, account, browser, and file information.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-general.png" width="560" alt="MacPulse General settings for startup, menu-bar presentation, displayed names, and monitoring controls">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-appearance.png" width="560" alt="MacPulse Appearance settings for motion, dashboard fields, and live history">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>General</strong><br>Startup, menu-bar display, labels, and monitoring controls.</sub></td>
+    <td align="center"><sub><strong>Appearance</strong><br>Visual response, dashboard fields, and history duration.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-sampling.png" width="560" alt="MacPulse Sampling settings for adaptive policy, low-power behavior, graphics selection, and current state">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-widgets.png" width="560" alt="MacPulse Widgets settings for synchronization, available widget families, and snapshot refresh">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>Sampling</strong><br>Adaptive profile, Low Power Mode, GPU selection, and effective policy.</sub></td>
+    <td align="center"><sub><strong>Widgets</strong><br>Synchronization, included families, and desktop setup.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-compatibility.png" width="560" alt="MacPulse Compatibility settings showing system metadata, GPU providers, power telemetry, and diagnostics">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/settings-about.png" width="560" alt="MacPulse About settings showing privacy principles, project links, defaults, and license">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>Compatibility</strong><br>Hardware metadata, telemetry providers, power fields, and diagnostics.</sub></td>
+    <td align="center"><sub><strong>About</strong><br>Privacy principles, project links, defaults, and license.</sub></td>
+  </tr>
+</table>
 
 ## 1. Scope
 

@@ -8,7 +8,7 @@ cef3cbb6bdd97f4f650d2f9d9ad06a83e92addad06dd67a62ef01afd28c9b188  ./.github/work
 9c3b7f905cde2d3646f234f87bfcba112692f2deeb9c70b13956bee92fe7aaed  ./.gitignore
 a494123d1b74979aeb43bf69fa456a4be0c6d5c54bc17f4d5e24448331e636ab  ./Build and Create DMG.command
 4a07e99ffc16dca00bd9617a0f24918252537fb332f5fc9e0f0eb9d76d926672  ./Build and Install MacPulse.command
-204fbb6082c805616ff65d757f07c0f9f24f8713334adfe33fd9763e4dc5397f  ./CHANGELOG.md
+5fd00ebccecf5dda9b0adc5024efb6ad4c65f529758a08c06a0b8a761fbe901f  ./CHANGELOG.md
 a1102b1e6b3e4041eec105ee12ff99a5e9bbfe2f05a5a07306742cbcaa1e0230  ./CITATION.cff
 9db2600abac71b8540593766e08b71eb5a6baf1326b26e9e1efd18817874d14e  ./CODE_OF_CONDUCT.md
 a1b7cc16c3d37d13f2dda3c84b7a4b0fb8fa5e5dba07e032bd6ab41a41f1a5e0  ./CONTRIBUTING.md
@@ -63,7 +63,7 @@ d2f8b693b41809bd7f4ef7c60b742def599849c230479313b601ec0737666363  ./MacPulseTest
 ed11c6e1ca02dc7414a98e497614b5a10582e25271d1d66f46749e5b6f601f3c  ./Makefile
 5cc5d07dfd73aabb426703a60f86153eab9d532c9243fe1da5be8ed89d7f13bc  ./Open MacPulse in Xcode.command
 cd3cde2f3937f03cdf771fd6b133d929adb81ee7500bd602fdba9b830aadfe7a  ./Package.swift
-67a33cb8c8e1a9397128808bd1c7bdf7da231e8384f56d666ba2e1837fe05ef4  ./README.md
+8263a17efd4377c64db15a9dc52d1697d22a1f3b599e29502f6dd1bfaa267d1d  ./README.md
 6a1291db9cc89bd078f1f44ec03bba6cb53cf127b97583bb4fad610a92e67001  ./SECURITY.md
 eccc432182516ada491fe2a653943e99ca081346635752600d664bc13a8c98fa  ./SOURCE-SYMLINKS.txt
 1543396083529b381dc50c132abda185831cf402011f850983cb4b5c9e56d32f  ./SUPPORT.md
@@ -95,9 +95,15 @@ a59c7f42da230d74f7c1cd00cc4904fd13cbbc482047bd4f3e87ac75458cb765  ./docs/RELEASI
 705471163e432784c1d2720ced512a01db0984a0ffbc01d0d8c656a67e21e1be  ./docs/TROUBLESHOOTING.md
 470388df77ceda61409e9bbd3a347f7aea929fb7bed0d38b3156bb0264b6478d  ./docs/USER_GUIDE.md
 1e20be142f3aa04ee34923b9486fca149b55eb61294957c4dc758ce070b132e8  ./docs/VALIDATION.md
-9102af074a4722e62ca2fc4c7e20d97c64bb893e9f671d5ac9e6b4eedbcdf239  ./docs/images/screenshots/README.md
+95b692614e2114d8b3e70135667408c3a2f1291b6acd5e93cb5fddd7f01e250c  ./docs/images/screenshots/README.md
 bd3657a9db79f5af7a67765198448d4513b55b87eef25433684a975e36783207  ./docs/images/screenshots/menu-dashboard-overview.png
 d2628e4457d185d9cce55764dde2e73a1a1979032c8aa38585c88a8f1a047b2e  ./docs/images/screenshots/menu-dashboard-telemetry.png
+66a7c5a48414cd58deac04f3fb302d8564d9f65add042d58a4efabd966c72aae  ./docs/images/screenshots/settings-about.png
+ea6e9e4007a62c939983d156e169c3cd189d257981b8052e1b68c01d20047793  ./docs/images/screenshots/settings-appearance.png
+22b5388f76c5a2b45ed2057a4e2e5ed5f1deadecc6e028d19794cb768bd1c38c  ./docs/images/screenshots/settings-compatibility.png
+9896ae6c3d90343d9c8cb03bc2ab60de97963ca40d56bcfa5e13810340312f02  ./docs/images/screenshots/settings-general.png
+13a2a40fb6393e0e5c14bc6e37b2db91588ccfe05588c9d2958c5c34e4463cdf  ./docs/images/screenshots/settings-sampling.png
+5bf98d2faabc6b38c30ce4dd260169429bda4e424dd1396ec5fb2b52a98d6830  ./docs/images/screenshots/settings-widgets.png
 1d3171d817d8b799dedac33472bee9dc8fc6216326550e6de2b004b5f9fbf20c  ./docs/images/screenshots/widget-gallery-cpu-gpu.png
 2ac403d615469226fae159ef124d3e2a6634dd1dcc965b567afef4f3fe340055  ./docs/images/screenshots/widget-gallery-overview.png
 e614b7810c5a9c52a57ee1a6d48eb964f641041d6446ef87fcae95b83c6260e9  ./docs/images/screenshots/widget-standard.png

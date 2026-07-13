@@ -8,6 +8,9 @@ This directory contains only the curated product captures referenced by the repo
 2. `menu-dashboard-telemetry.png` — history, memory, and driver-exposed GPU fields;
 3. `widget-standard.png` and `widget-tinted.png` — the desktop overview widget;
 4. `widget-gallery-overview.png` and `widget-gallery-cpu-gpu.png` — the available WidgetKit families and sizes.
+5. `settings-general.png` and `settings-appearance.png` — primary application behavior and visual controls;
+6. `settings-sampling.png` and `settings-widgets.png` — adaptive telemetry and WidgetKit configuration;
+7. `settings-compatibility.png` and `settings-about.png` — hardware diagnostics, privacy principles, and project information.
 
 ## Publication rules
 
