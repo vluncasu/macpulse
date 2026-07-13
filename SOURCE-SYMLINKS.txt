@@ -1,0 +1,5 @@
+./CoreSources/AppConstants.swift -> ../Shared/AppConstants.swift
+./CoreSources/GPUStatisticsParser.swift -> ../MacPulse/Metrics/GPUStatisticsParser.swift
+./CoreSources/MetricSmoother.swift -> ../MacPulse/Metrics/MetricSmoother.swift
+./CoreSources/SamplingPolicy.swift -> ../Shared/SamplingPolicy.swift
+./CoreSources/SystemSnapshot.swift -> ../Shared/SystemSnapshot.swift

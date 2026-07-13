@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible MacPulse defect
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: MacPulse version
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model, architecture, and macOS version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: registry
+    attributes:
+      label: Relevant IORegistry keys
+      description: Remove serial numbers and other unrelated identifiers before posting.

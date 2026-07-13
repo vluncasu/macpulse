@@ -1,0 +1,37 @@
+name: Local ad-hoc universal artifact
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Validate portable core
+        run: swift test
+      - name: Build universal app bundle
+        env:
+          UNIVERSAL: "1"
+        run: ./scripts/build-local.sh
+      - name: Inspect artifact
+        run: ./scripts/verify-release.sh dist/MacPulse.app
+      - name: Package drag-to-install DMG
+        env:
+          SKIP_FINDER_LAYOUT: "1"
+        run: ./scripts/package-dmg.sh dist/MacPulse.app
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: MacPulse-local-adhoc-universal
+          path: |
+            dist/MacPulse-*.zip
+            dist/MacPulse-*.dmg
+            dist/MacPulse-*.dmg.sha256
+            dist/SHA256SUMS.txt
+            dist/xcodebuild.log
+          if-no-files-found: error
+          retention-days: 14

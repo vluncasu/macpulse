@@ -1,0 +1,21 @@
+name: Feature request
+description: Propose a focused enhancement
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: energy
+    attributes:
+      label: Expected energy and privacy impact

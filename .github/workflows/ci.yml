@@ -1,0 +1,60 @@
+name: macOS CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macpulse-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  portable-core:
+    name: Portable parser and filter tests
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Swift package tests
+        run: swift test
+
+  source-validation:
+    name: Source and metadata validation
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Validate Swift syntax, plists, and scripts
+        run: ./scripts/validate-source.sh
+
+  xcode-build-and-test:
+    name: Xcode build and tests
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Xcode version
+        run: xcodebuild -version
+      - name: Build
+        run: |
+          xcodebuild \
+            -project MacPulse.xcodeproj \
+            -scheme MacPulse \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            -derivedDataPath .build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+      - name: Test
+        run: |
+          xcodebuild \
+            -project MacPulse.xcodeproj \
+            -scheme MacPulse \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            -derivedDataPath .build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            test

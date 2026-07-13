@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use MacPulse in a study, benchmark, demonstration, or derived project, cite the software and state the exact version and hardware configuration."
+title: "MacPulse"
+type: software
+version: 2.1.2
+date-released: 2026-07-13
+license: MIT
+repository-code: "https://github.com/vluncasu/macpulse"
+url: "https://github.com/vluncasu/macpulse"
+abstract: "A quiet native CPU and GPU telemetry utility for macOS menu-bar and WidgetKit surfaces, with adaptive sampling and defensive IORegistry parsing."
+authors:
+  - name: "TerabitLab"
+keywords:
+  - macOS
+  - CPU telemetry
+  - GPU telemetry
+  - WidgetKit
+  - IOKit
+  - Hackintosh
+  - Apple Silicon

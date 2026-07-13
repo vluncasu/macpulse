@@ -1,0 +1,20 @@
+.DS_Store
+DerivedData/
+.build/
+dist/
+.local/
+MacPulse Screenshots/
+.swiftpm/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.dSYM
+*.dmg
+*.p12
+*.p8
+*.pem
+*.key
+*.mobileprovision
+.env
+.env.*
