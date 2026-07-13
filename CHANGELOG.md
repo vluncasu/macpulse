@@ -12,6 +12,8 @@
 - Hardened GitHub Actions and added DMG output to the manual artifact workflow.
 - Replaced the deprecated save-panel file-type API for clean macOS 13+ builds.
 - Converted Xcode unit tests to standalone logic tests so CI cannot hang on the menu-bar app lifecycle.
+- Added a compact, privacy-reviewed product tour with the menu dashboard first, desktop widgets second, and the complete widget gallery collapsed by default.
+- Hardened DMG packaging against stale mounted release images and same-name volume conflicts.
 
 ## 2.1.1
 

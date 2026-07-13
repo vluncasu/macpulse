@@ -14,6 +14,63 @@ Repository: `https://github.com/vluncasu/macpulse`
 
 This is the No-Team build: it is ad-hoc signed and is not Apple-notarized. macOS may therefore block its first launch. After dragging `MacPulse.app` to Applications, use Finder to Control-click the application, choose **Open**, and confirm only if the downloaded SHA-256 matches the checksum published with the release. Users who require a verified publisher identity should build from source or use a future Developer ID signed and notarized release.
 
+## Product tour
+
+The interface is shown in its normal usage order: first the live menu-bar dashboard, then the desktop widgets. These are real captures from an Intel/AMD test system; available fields and numeric values depend on the Mac and the telemetry exposed by its active macOS drivers.
+
+### Menu-bar dashboard
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/menu-dashboard-overview.png" width="360" alt="MacPulse menu-bar dashboard showing CPU and GPU gauges, power fields, recent activity, and CPU composition">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/menu-dashboard-telemetry.png" width="360" alt="MacPulse menu-bar dashboard showing activity history, memory, and detailed GPU telemetry">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>Live overview</strong><br>CPU, GPU, power, history, and CPU composition.</sub></td>
+    <td align="center"><sub><strong>Detailed telemetry</strong><br>Memory, temperature, clocks, fan, power, and GPU memory when exposed.</sub></td>
+  </tr>
+</table>
+
+### Desktop widgets
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/widget-standard.png" width="345" alt="MacPulse overview widget in the standard macOS appearance">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/widget-tinted.png" width="345" alt="MacPulse overview widget in the tinted macOS appearance">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>Standard appearance</strong><br>Compact CPU, GPU, memory, temperature, and freshness state.</sub></td>
+    <td align="center"><sub><strong>Tinted appearance</strong><br>The same information adapted to the selected desktop treatment.</sub></td>
+  </tr>
+</table>
+
+<details>
+<summary><strong>View all WidgetKit layouts</strong></summary>
+<br>
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/widget-gallery-overview.png" width="720" alt="MacPulse Overview widgets in small, medium, and large WidgetKit layouts">
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/screenshots/widget-gallery-cpu-gpu.png" width="720" alt="MacPulse focused CPU and GPU widgets in small and medium WidgetKit layouts">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub><strong>Overview family</strong><br>Small, medium, and large layouts.</sub></td>
+    <td align="center"><sub><strong>Focused metrics</strong><br>Dedicated CPU and GPU layouts.</sub></td>
+  </tr>
+</table>
+</details>
+
 ## 1. Scope
 
 MacPulse has four defined functions:
@@ -328,6 +385,7 @@ CoreSources/              Portable source links
 CoreTests/                Portable Swift tests
 scripts/                  Build, install, package, and release scripts
 docs/                     Technical documentation
+docs/images/screenshots/  Curated public product captures
 MacPulse.xcodeproj/        Xcode project
 ```
 

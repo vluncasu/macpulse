@@ -8,7 +8,7 @@ cef3cbb6bdd97f4f650d2f9d9ad06a83e92addad06dd67a62ef01afd28c9b188  ./.github/work
 9c3b7f905cde2d3646f234f87bfcba112692f2deeb9c70b13956bee92fe7aaed  ./.gitignore
 a494123d1b74979aeb43bf69fa456a4be0c6d5c54bc17f4d5e24448331e636ab  ./Build and Create DMG.command
 4a07e99ffc16dca00bd9617a0f24918252537fb332f5fc9e0f0eb9d76d926672  ./Build and Install MacPulse.command
-cb60d204d2f2037e1493a0479cb958a2eb11365e476c724379daaa8b8589ddf9  ./CHANGELOG.md
+204fbb6082c805616ff65d757f07c0f9f24f8713334adfe33fd9763e4dc5397f  ./CHANGELOG.md
 a1102b1e6b3e4041eec105ee12ff99a5e9bbfe2f05a5a07306742cbcaa1e0230  ./CITATION.cff
 9db2600abac71b8540593766e08b71eb5a6baf1326b26e9e1efd18817874d14e  ./CODE_OF_CONDUCT.md
 a1b7cc16c3d37d13f2dda3c84b7a4b0fb8fa5e5dba07e032bd6ab41a41f1a5e0  ./CONTRIBUTING.md
@@ -63,7 +63,7 @@ d2f8b693b41809bd7f4ef7c60b742def599849c230479313b601ec0737666363  ./MacPulseTest
 ed11c6e1ca02dc7414a98e497614b5a10582e25271d1d66f46749e5b6f601f3c  ./Makefile
 5cc5d07dfd73aabb426703a60f86153eab9d532c9243fe1da5be8ed89d7f13bc  ./Open MacPulse in Xcode.command
 cd3cde2f3937f03cdf771fd6b133d929adb81ee7500bd602fdba9b830aadfe7a  ./Package.swift
-bb3011dbc7f25ae916ffd1859e24f0b501eb126250444a7279295d75c5c7dc65  ./README.md
+67a33cb8c8e1a9397128808bd1c7bdf7da231e8384f56d666ba2e1837fe05ef4  ./README.md
 6a1291db9cc89bd078f1f44ec03bba6cb53cf127b97583bb4fad610a92e67001  ./SECURITY.md
 eccc432182516ada491fe2a653943e99ca081346635752600d664bc13a8c98fa  ./SOURCE-SYMLINKS.txt
 1543396083529b381dc50c132abda185831cf402011f850983cb4b5c9e56d32f  ./SUPPORT.md
@@ -88,13 +88,20 @@ a618f92f03a8ba8689e66933353edc2729dd153a7efe8068a82560e256c3da9e  ./docs/GPU_TEL
 31bab93729b16dc13677386d07fc3b1bcabaf556e665b45513099d04148e4687  ./docs/PRIVACY.md
 d534fec6c68e71d36d4d111ef78410ae517d36a876108778fba89f28c10583f7  ./docs/PRODUCT.md
 48b5de3b1c232855f43b2cf7a092cee6fe43e711b6063af132457394547c4230  ./docs/QUALITY_MODEL.md
-72f7bc9591c19cfc98922830536173f65f32d31bb9ae1f2e875b48f9928369b0  ./docs/RELEASE_CHECKLIST.md
+cf0a369ba82ebfb44d6e39dc18c7fb227c35de4a3589ecb380516f09137554af  ./docs/RELEASE_CHECKLIST.md
 a59c7f42da230d74f7c1cd00cc4904fd13cbbc482047bd4f3e87ac75458cb765  ./docs/RELEASING.md
 172a50e21e63433da2a8542fe2bd4e63b7ac2a530e94087a20d69484aee28e75  ./docs/STARTUP.md
 6aacb0111399184eff6f84cd0653797f1065696aa9147f74dee98d6cb56ddf7e  ./docs/THREAT-MODEL.md
 705471163e432784c1d2720ced512a01db0984a0ffbc01d0d8c656a67e21e1be  ./docs/TROUBLESHOOTING.md
 470388df77ceda61409e9bbd3a347f7aea929fb7bed0d38b3156bb0264b6478d  ./docs/USER_GUIDE.md
 1e20be142f3aa04ee34923b9486fca149b55eb61294957c4dc758ce070b132e8  ./docs/VALIDATION.md
+9102af074a4722e62ca2fc4c7e20d97c64bb893e9f671d5ac9e6b4eedbcdf239  ./docs/images/screenshots/README.md
+bd3657a9db79f5af7a67765198448d4513b55b87eef25433684a975e36783207  ./docs/images/screenshots/menu-dashboard-overview.png
+d2628e4457d185d9cce55764dde2e73a1a1979032c8aa38585c88a8f1a047b2e  ./docs/images/screenshots/menu-dashboard-telemetry.png
+1d3171d817d8b799dedac33472bee9dc8fc6216326550e6de2b004b5f9fbf20c  ./docs/images/screenshots/widget-gallery-cpu-gpu.png
+2ac403d615469226fae159ef124d3e2a6634dd1dcc965b567afef4f3fe340055  ./docs/images/screenshots/widget-gallery-overview.png
+e614b7810c5a9c52a57ee1a6d48eb964f641041d6446ef87fcae95b83c6260e9  ./docs/images/screenshots/widget-standard.png
+a08b67f324d6bac2f3eacc1cbe4d0ca06cb675268c8c9ee2c6edeff1500c16cf  ./docs/images/screenshots/widget-tinted.png
 3c74316a52e0b24a2b42c7390a011cdc09c1acb1a3c64fd50bf47c57178443ca  ./scripts/build-and-package.sh
 6f4437b06a13db9fedf404d5363507c02d851472682cf529ea74af47bae88bdc  ./scripts/build-local.sh
 2694542c8b1a9292a2032b3c372ec6227c663027563539a1c7a33956e9586335  ./scripts/clean.sh
@@ -102,7 +109,7 @@ a59c7f42da230d74f7c1cd00cc4904fd13cbbc482047bd4f3e87ac75458cb765  ./docs/RELEASI
 f607f43433d243119880dae29e4d4fe70ca49b0ba92d6f01f822eea80163c10f  ./scripts/doctor.sh
 4068af8aafd5a3acedbaf71649f605fc68b223f21a5279df295e71daecde974b  ./scripts/install-local.sh
 46eaea0fc1d2752fdf2155a698f0af7c9efb4973e787a7fd57779ce62eb92eec  ./scripts/notarize.sh
-d17117db256778d6d033e5d5cb0647a7710132dc9ce089287029751e2b8bf0e7  ./scripts/package-dmg.sh
+538324f8955015fda46d6ee6a4d6d8d38e0eab6b8b29ad4ebb6a1a9ffa5f2081  ./scripts/package-dmg.sh
 6921e0839b5e0bef67d43916518984c283dc25d6a32d395123260e254b73ef70  ./scripts/release-preflight.sh
 7366c28a505156bec9c804ec85644c0a029b0358c76f6f13296474d98e0a0bce  ./scripts/uninstall.sh
 b7ee6a505722a6494457e51b918ecafd963dfce069c10115ee64d3fca8cb3ffe  ./scripts/validate-source.sh

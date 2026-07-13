@@ -53,6 +53,41 @@ cleanup() {
 }
 trap cleanup EXIT
 
+# A previously generated DMG can remain mounted even after its file is
+# replaced. Detach only images whose recorded source path is this package's
+# own final output; never unmount an unrelated user volume.
+while IFS= read -r device; do
+  [[ -n "$device" ]] || continue
+  echo "Detaching previously mounted release image: $device"
+  hdiutil detach "$device" -quiet || {
+    echo "Error: could not detach the previously mounted release image ($device)." >&2
+    echo "Eject the MacPulse disk image and run packaging again." >&2
+    exit 1
+  }
+done < <(
+  hdiutil info | awk -v path="$OUTPUT_DMG" '
+    /^image-path[[:space:]]*:/ {
+      current = $0
+      sub(/^[^:]*:[[:space:]]*/, "", current)
+      selected = (current == path)
+      next
+    }
+    selected && /^\/dev\/disk[0-9]+[[:space:]]/ {
+      print $1
+      selected = 0
+    }
+  '
+)
+
+# Finder addresses disks by volume name. If an unrelated volume called
+# MacPulse is already mounted, keep packaging deterministic and skip only the
+# optional Finder layout instead of targeting the wrong disk.
+if [[ "$SKIP_FINDER_LAYOUT" != "1" ]] && \
+   hdiutil info | grep -Eq '[[:space:]]/Volumes/MacPulse( [0-9]+)?$'; then
+  echo "Warning: another MacPulse volume is mounted; skipping optional Finder layout." >&2
+  SKIP_FINDER_LAYOUT=1
+fi
+
 mkdir -p "$DIST" "$STAGE/source"
 ditto "$APP" "$STAGE/source/MacPulse.app"
 ln -s /Applications "$STAGE/source/Applications"
@@ -66,6 +101,10 @@ hdiutil create \
   -ov \
   "$RW_DMG" >/dev/null
 
+# Configure a conventional drag-to-install Finder window. Failure to set the
+# visual layout does not invalidate the DMG; the app and Applications link are
+# already present.
+if [[ "$SKIP_FINDER_LAYOUT" != "1" ]]; then
 ATTACH_OUTPUT=$(hdiutil attach "$RW_DMG" -readwrite -noverify -noautoopen)
 DEVICE=$(printf '%s\n' "$ATTACH_OUTPUT" | awk '/Apple_HFS/ {print $1; exit}')
 MOUNT_POINT=$(printf '%s\n' "$ATTACH_OUTPUT" | awk '/Apple_HFS/ {$1=$2=""; sub(/^  */, ""); print; exit}')
@@ -75,10 +114,6 @@ if [[ -z "$DEVICE" || -z "$MOUNT_POINT" || ! -d "$MOUNT_POINT" ]]; then
   exit 1
 fi
 
-# Configure a conventional drag-to-install Finder window. Failure to set the
-# visual layout does not invalidate the DMG; the app and Applications link are
-# already present.
-if [[ "$SKIP_FINDER_LAYOUT" != "1" ]]; then
 osascript <<APPLESCRIPT || true
 tell application "Finder"
     tell disk "$VOLUME_BASENAME"
@@ -101,11 +136,11 @@ tell application "Finder"
     end tell
 end tell
 APPLESCRIPT
-fi
 
 sync
 hdiutil detach "$DEVICE" -quiet
 MOUNT_POINT=""
+fi
 
 rm -f "$OUTPUT_DMG"
 hdiutil convert "$RW_DMG" \

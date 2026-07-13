@@ -6,7 +6,7 @@
 - [ ] `MARKETING_VERSION`, build number, `CHANGELOG.md`, and `CITATION.cff` agree.
 - [ ] README compatibility and requirements are current.
 - [ ] No secrets, provisioning profiles, certificates, or diagnostics are committed.
-- [ ] screenshots contain no local user names, private browser content, financial data, or other personal context
+- [ ] Screenshots are curated under `docs/images/screenshots/` and contain no local user names, private browser content, financial data, or other personal context.
 
 ## Automated validation
 
