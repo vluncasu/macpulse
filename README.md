@@ -1,28 +1,101 @@
-# MacPulse
+# MacPulse — CPU & GPU Monitor for macOS
 
-MacPulse is a native macOS telemetry application that reports processor activity, graphics activity, memory state, selected power measurements, and hardware metadata. It runs as a menu-bar accessory application and includes WidgetKit extensions for desktop presentation.
+MacPulse is a free, open-source **CPU and GPU monitor for macOS**. It shows processor usage, graphics activity, memory, temperature, clocks, fan speed, and available power telemetry from the menu bar and native desktop widgets.
 
-This repository contains the source code, Xcode project, tests, local build scripts, DMG packaging scripts, and technical documentation for MacPulse 2.1.2.
-
-Developed by [TerabitLab](https://terabitlab.com/).
-
-Repository: `https://github.com/vluncasu/macpulse`
+It is a lightweight Swift and SwiftUI system monitor for Apple Silicon Macs, Intel Macs, and compatible accelerated Hackintosh systems. MacPulse has no analytics, no advertisements, no account, and no background network requests.
 
 <p align="center">
   <a href="https://github.com/vluncasu/macpulse/releases/download/v2.1.2/MacPulse-2.1.2.dmg"><strong>Download MacPulse 2.1.2 for macOS (.dmg)</strong></a><br>
   <sub>Universal application for Apple Silicon and Intel Macs · macOS 13 or newer</sub>
 </p>
 
-## Download
+## Install MacPulse
 
-[Download MacPulse 2.1.2 for macOS (DMG)](https://github.com/vluncasu/macpulse/releases/download/v2.1.2/MacPulse-2.1.2.dmg) or open the [v2.1.2 release page](https://github.com/vluncasu/macpulse/releases/tag/v2.1.2) for checksums and release notes.
+### 1. Download
+
+Click **[Download MacPulse 2.1.2 (.dmg)](https://github.com/vluncasu/macpulse/releases/download/v2.1.2/MacPulse-2.1.2.dmg)**. If the download does not start, open the [v2.1.2 release page](https://github.com/vluncasu/macpulse/releases/tag/v2.1.2), expand **Assets**, and select `MacPulse-2.1.2.dmg`.
+
+### 2. Install
+
+1. Open the downloaded `MacPulse-2.1.2.dmg` file.
+2. Drag `MacPulse.app` onto the **Applications** shortcut.
+3. Open the **Applications** folder in Finder.
+
+### 3. Open it for the first time
+
+This release is built without a paid Apple Developer certificate. macOS may block a normal double-click even though the published file matches the verified source build.
+
+1. In Finder, Control-click or right-click `MacPulse.app`.
+2. Choose **Open**.
+3. Choose **Open** again in the confirmation dialog.
+4. Look for the MacPulse gauge icon in the menu bar.
+
+You only need the Control-click procedure on the first launch. For additional confidence, compare the downloaded file with the SHA-256 checksum on the [release page](https://github.com/vluncasu/macpulse/releases/tag/v2.1.2).
 
 > [!IMPORTANT]
 > Installable Mac binaries are published as **GitHub Release assets**, not under Packages. [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) provides registries for formats such as npm, Maven, NuGet, RubyGems, and containers; it is not a generic DMG download area. The verified MacPulse DMG is attached directly to the release above.
 
-This is the No-Team build: it is ad-hoc signed and is not Apple-notarized. macOS may therefore block its first launch. After dragging `MacPulse.app` to Applications, use Finder to Control-click the application, choose **Open**, and confirm only if the downloaded SHA-256 matches the checksum published with the release. Users who require a verified publisher identity should build from source or use a future Developer ID signed and notarized release.
+## Use MacPulse
 
-## Product tour
+### View live CPU and GPU activity
+
+Click the MacPulse icon in the menu bar. The dashboard shows the data currently exposed by your Mac, including:
+
+- CPU and GPU usage;
+- recent CPU and GPU activity;
+- memory usage;
+- GPU temperature, clocks, fan speed, power, and memory when the active driver exposes them;
+- system and component power fields when macOS provides reliable values.
+
+`Not exposed` means that macOS or the active hardware driver does not publish that measurement. MacPulse does not invent missing values.
+
+### Add a Mac desktop widget
+
+1. Control-click or right-click an empty area of the desktop.
+2. Choose **Edit Widgets**.
+3. Search for **MacPulse**.
+4. Choose Overview, CPU, or GPU.
+5. Select a size and place the widget on the desktop.
+
+The menu-bar dashboard is the live view. macOS controls WidgetKit refresh timing, so desktop widgets update periodically rather than every second.
+
+### Change settings
+
+Open the menu-bar dashboard and click **Settings…**. You can control startup behavior, menu-bar labels, visual smoothing, sampling policy, GPU selection, displayed fields, and widget synchronization.
+
+## Build MacPulse from source
+
+Building from source requires macOS 13 or newer, Xcode 15 or newer, and the Xcode command-line tools. A paid Apple Developer account is not required for a local build.
+
+### Easiest method
+
+1. Download the repository with **Code → Download ZIP**, then extract it.
+2. Open the extracted `macpulse` folder.
+3. Double-click `Build and Install MacPulse.command`.
+4. Allow Terminal to run the script if macOS asks.
+5. Wait for `MacPulse was installed and opened`.
+
+To create your own DMG, double-click `Build and Create DMG.command`. The result is written to the `dist` folder.
+
+### Terminal method
+
+```bash
+git clone https://github.com/vluncasu/macpulse.git
+cd macpulse
+./scripts/doctor.sh
+./scripts/build-local.sh
+./scripts/install-local.sh
+```
+
+For a complete local build and DMG:
+
+```bash
+./scripts/build-and-package.sh
+```
+
+See [Building](docs/BUILDING.md) for signing options and troubleshooting.
+
+## Screenshots
 
 The interface is shown in its normal usage order: first the live menu-bar dashboard, then the desktop widgets. These are real captures from an Intel/AMD test system; available fields and numeric values depend on the Mac and the telemetry exposed by its active macOS drivers.
 
@@ -440,6 +513,8 @@ docs/images/screenshots/  Curated public product captures
 MacPulse.xcodeproj/        Xcode project
 ```
 
-## 13. License
+## 13. License and project
 
 MacPulse is distributed under the MIT License. See [LICENSE](LICENSE).
+
+Project maintained by [TerabitLab](https://terabitlab.com/). Source, issues, and releases are hosted in this repository.

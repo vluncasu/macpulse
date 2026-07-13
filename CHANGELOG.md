@@ -15,6 +15,7 @@
 - Added a compact, privacy-reviewed product tour with the menu dashboard first, desktop widgets second, and the complete widget gallery collapsed by default.
 - Hardened DMG packaging against stale mounted release images and same-name volume conflicts.
 - Added complete, privacy-cropped screenshots for every Settings surface and clarified that DMG binaries are distributed through GitHub Releases rather than package registries.
+- Reorganized the README around simple download, first-launch, widget, and source-build instructions; added search-focused macOS CPU/GPU monitor terminology and moved project attribution to the end.
 
 ## 2.1.1
 
